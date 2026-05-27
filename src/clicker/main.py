@@ -2,6 +2,7 @@ import curses
 from .new_game import new_game
 from .render.menu import draw_menu
 from .render.game import draw_game
+from .buildings.economy import buy_building
 
 
 SCREEN_MENU = "menu"
@@ -31,7 +32,8 @@ def app(stdscr) -> None:
         elif key == ord("s")  and current_screen == SCREEN_MENU:
             current_screen = SCREEN_GAME
             current_game = new_game()
-
+        elif key == ord("1") and current_screen == SCREEN_GAME:
+            buy_building(current_game, "farm")
 
 def main():
     curses.wrapper(app)
