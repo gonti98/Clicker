@@ -2,7 +2,7 @@ import curses
 from .game.new_game import new_game
 from .render.menu import draw_menu
 from .render.game import draw_game
-from .buildings.economy import buy_building
+from .game.buildings.economy import buy_building
 
 
 SCREEN_MENU = "menu"

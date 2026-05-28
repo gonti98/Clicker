@@ -1,8 +1,8 @@
 from .text import center_string, center_string_offset
 from ..game.game_state import GameState
 from ..game.game_time import time_elapsed
-from ..buildings.definitions import BUILDINGS
-from ..buildings.economy import get_building_cost, get_building_income
+from ..game.buildings.definitions import BUILDINGS
+from ..game.buildings.economy import get_building_cost, get_building_income
 
 
 def draw_game(stdscr, current_game: GameState) -> None:

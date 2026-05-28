@@ -1,6 +1,6 @@
 import time
 from .game_state import GameState, BuildingState
-from ..buildings.definitions import BUILDINGS
+from .buildings.definitions import BUILDINGS
 
 def new_game() -> GameState:
     return GameState(

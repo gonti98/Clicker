@@ -1,5 +1,5 @@
-from ..game.game_state import GameState
-from ..buildings.definitions import BUILDINGS
+from ..game_state import GameState
+from .definitions import BUILDINGS
 
 
 def get_building_cost(state: GameState, building_key: str) -> int:
