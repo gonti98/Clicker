@@ -3,6 +3,7 @@ from .game.new_game import new_game
 from .render.menu import draw_menu
 from .render.game import draw_game
 from .game.buildings.economy import buy_building
+from .game.handle_manual_score import handle_manual_score
 
 
 SCREEN_MENU = "menu"
@@ -29,7 +30,7 @@ def app(stdscr) -> None:
         if key == ord("q"):
             break
         elif key == ord(" ") and current_screen == SCREEN_GAME:
-            current_game.score += 1
+            handle_manual_score(current_game)
         elif key == ord("s")  and current_screen == SCREEN_MENU:
             current_screen = SCREEN_GAME
             current_game = new_game()

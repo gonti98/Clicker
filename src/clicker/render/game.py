@@ -7,7 +7,7 @@ from ..game.buildings.economy import get_building_cost, get_building_income
 
 def draw_game(stdscr, current_game: GameState) -> None:
     elapsed = time_elapsed(current_game)
-    stdscr.addstr(0, 0, f"time: {str(elapsed)}")
+    stdscr.addstr(0, 0, f"time: {float(elapsed):.1f}")
     stdscr.addstr(1, 0, f"buildings: {len(current_game.buildings)}")
 
     offset = 2
