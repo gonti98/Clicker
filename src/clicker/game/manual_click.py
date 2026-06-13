@@ -1,7 +1,7 @@
 import time
 
 
-def handle_manual_score(current_game):
+def try_manual_click(current_game) -> bool:
     now = time.monotonic()
     manual_click = current_game.manual_click
 

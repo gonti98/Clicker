@@ -1,4 +1,5 @@
 import time
+
 from .game_state import GameState, BuildingState, ManualClickState
 from .buildings.definitions import BUILDINGS
 
