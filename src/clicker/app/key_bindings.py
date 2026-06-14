@@ -26,5 +26,6 @@ class MenuKey(BaseKey):
 
 class GameKey(BaseKey):
     MANUAL_CLICK = (ord(" "), "space", "Manual score")
+    MANUAL_CLICK_UPGRADE = (ord("v"), "v", "Upgrade manual score")
     BUY_FARM = (ord("1"), "1", "Buy Farm")
     ESC = (27, "esc", "Escape")

@@ -6,9 +6,8 @@ class BuildingState:
 
 @dataclass
 class ManualClickState:
-    base_income: int = 1
-    cooldown: float = 1.0
     ready_at: float = 0.0
+    income_upgrade_level: int = 0
 
 @dataclass
 class GameState:
