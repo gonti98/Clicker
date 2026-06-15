@@ -1,12 +1,11 @@
 from .text import center_string, center_string_offset
 from ..game.state import GameState
-from ..game.game_time import time_elapsed
 from ..game.buildings.definitions import BUILDINGS
 from ..game.buildings.economy import get_building_cost, get_building_income
 
 
 def draw_game(stdscr, current_game: GameState) -> None:
-    elapsed = time_elapsed(current_game)
+    elapsed = current_game.played_time
     stdscr.addstr(0, 0, f"time: {float(elapsed):.1f}")
     stdscr.addstr(1, 0, f"buildings: {len(current_game.buildings)}")
 

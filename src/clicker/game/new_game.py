@@ -8,7 +8,7 @@ def new_game() -> GameState:
     now = time.monotonic()
 
     return GameState(
-        score=100.0,
+        score=0.0,
         buildings={key: BuildingState() for key in BUILDINGS},
         started_at=now,
         manual_click=ManualClickState(ready_at=now),

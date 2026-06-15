@@ -2,6 +2,18 @@ from ..state import GameState
 from .definitions import BUILDINGS
 
 
+def get_income_per_unit(state: GameState, building_key: str) -> float:
+    definition = BUILDINGS[building_key]
+    return definition.base_income
+
+def get_income_per_type(state: GameState, building_key: str) -> float:
+    count = state.buildings[building_key].count
+    return get_income_per_unit(state, building_key) * count
+
+def get_income_total(state: GameState) -> float:
+    return sum(get_income_per_type(state, key) for key in state.buildings)
+
+
 def get_building_cost(state: GameState, building_key: str) -> float:
     definition = BUILDINGS[building_key]
     building_state = state.buildings[building_key]

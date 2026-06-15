@@ -1,9 +1,11 @@
 import curses
+import time
 
 from .render.menu import draw_menu
 from .render.game import draw_game
 from .app.state import AppState, Screen
 from .app.handle_input import handle_input
+from .game.update import update_game
 
 
 def app(stdscr) -> None:
@@ -11,8 +13,12 @@ def app(stdscr) -> None:
     stdscr.timeout(100)
     stdscr.keypad(False)
     app_state = AppState()
+    last_frame_time = time.monotonic()
 
     while app_state.running:
+        current_time = time.monotonic()
+        delta_time = current_time - last_frame_time
+        last_frame_time = current_time
         key = stdscr.getch()
         handle_input(key, app_state)
 
@@ -21,6 +27,7 @@ def app(stdscr) -> None:
         if app_state.current_screen == Screen.MENU:
             draw_menu(stdscr, app_state)
         elif app_state.current_screen == Screen.GAME:
+            update_game(app_state.current_game, delta_time)
             draw_game(stdscr, app_state.current_game)
         else:
             raise ValueError(f"Unknown screen: {app_state.current_screen!r}")
