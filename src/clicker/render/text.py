@@ -38,7 +38,7 @@ def center_string_offset(
     offset_y: int,
     offset_x: int,
     attr: int = 0,
-    ) -> None:
+) -> None:
 
     height, width = stdscr.getmaxyx()
     center_height = (height // 2) + offset_y

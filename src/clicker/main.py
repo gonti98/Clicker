@@ -27,12 +27,17 @@ def app(stdscr) -> None:
         if app_state.current_screen == Screen.MENU:
             draw_menu(stdscr, app_state)
         elif app_state.current_screen == Screen.GAME:
-            update_game(app_state.current_game, delta_time)
-            draw_game(stdscr, app_state.current_game)
+            game = app_state.current_game
+            if game is None:
+                raise ValueError("current_game is None on GAME screen")
+
+            update_game(game, delta_time)
+            draw_game(stdscr, game)
         else:
             raise ValueError(f"Unknown screen: {app_state.current_screen!r}")
 
         stdscr.refresh()
+
 
 def main():
     curses.wrapper(app)

@@ -17,7 +17,7 @@ def get_next_income_upgrade_cost(state: GameState) -> float:
     income_upgrade = state.manual_click.income_upgrade_level
     growth_rate = MANUAL_CLICK.growth_rate
 
-    upgrade_cost = base_cost * (growth_rate ** income_upgrade)
+    upgrade_cost = base_cost * (growth_rate**income_upgrade)
 
     return float(upgrade_cost)
 

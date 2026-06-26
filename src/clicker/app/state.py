@@ -3,9 +3,11 @@ from enum import Enum
 
 from ..game.state import GameState
 
+
 class Screen(Enum):
     MENU = "menu"
     GAME = "game"
+
 
 @dataclass
 class AppState:

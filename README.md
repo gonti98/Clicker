@@ -7,6 +7,6 @@ A simple terminal app in Python based on `curses`.
 ```bash
 python -m venv .venv
 source .venv/bin/activate
-pip install -e .
+pip install --editable .
 clicker
 ```

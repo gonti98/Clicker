@@ -13,6 +13,7 @@ class BuildingDefinition:
     base_cooldown: float
     growth_rate: float = GROWTH_RATE
 
+
 BUILDINGS = {
     "farm": BuildingDefinition(
         name="Farm",
