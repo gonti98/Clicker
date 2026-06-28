@@ -7,3 +7,4 @@ def update_game(state: GameState, delta_time: float) -> None:
     buildings_income = get_income_total(state)
     earned = buildings_income * delta_time
     state.score += earned
+    state.total_score += earned

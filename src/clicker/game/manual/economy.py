@@ -29,6 +29,7 @@ def try_manual_click(state: GameState) -> bool:
         return False
 
     state.score += get_current_income(state)
+    state.total_score += get_current_income(state)
     state.manual_click.ready_at = now + MANUAL_CLICK.base_cooldown
     return True
 

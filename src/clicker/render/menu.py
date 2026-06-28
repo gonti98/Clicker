@@ -14,4 +14,5 @@ def draw_menu(stdscr, app_state) -> None:
             if key is MenuKey.CONTINUE and app_state.current_game is None
             else 0
         )
+
         center_string_offset(stdscr, key.description, offset_y, 0, attr)
