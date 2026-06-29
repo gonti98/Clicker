@@ -1,6 +1,6 @@
 from .state import Screen
 from .key_bindings import MenuKey, GameKey
-from .save_manager import save
+from .save_manager import save, load, has_save
 from ..game.new_game import new_game
 from ..game.manual.economy import try_manual_click, try_buy_income_upgrade
 from ..game.buildings.economy import try_buy_building
@@ -19,7 +19,8 @@ def handle_input(key, app_state) -> None:
 def handle_menu_input(key, app_state) -> None:
     match key:
         case MenuKey.CONTINUE:
-            if app_state.current_game is not None:
+            if has_save:
+                app_state.current_game = load()
                 app_state.current_screen = Screen.GAME
         case MenuKey.START:
             app_state.current_game = new_game()

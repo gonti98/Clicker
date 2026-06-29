@@ -10,6 +10,5 @@ def new_game() -> GameState:
     return GameState(
         score=0.0,
         buildings={key: BuildingState() for key in BUILDINGS},
-        started_at=now,
         manual_click=ManualClickState(ready_at=now),
     )

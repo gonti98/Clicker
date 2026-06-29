@@ -25,7 +25,7 @@ def app(stdscr) -> None:
         stdscr.erase()
 
         if app_state.current_screen == Screen.MENU:
-            draw_menu(stdscr, app_state)
+            draw_menu(stdscr)
         elif app_state.current_screen == Screen.GAME:
             game = app_state.current_game
             if game is None:
